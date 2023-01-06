@@ -25,6 +25,13 @@ The DetailViewController class is responsible for displaying detailed informatio
 The UIImageView extension provides a method for downloading an image from a URL and displaying it in the image view. The downloaded(from:) method takes a URL and optionally a content mode as parameters, and it sets the image of the image view to the image at the URL using the specified content mode.
 
 
+# Screenshots
+
+<img src="https://i.imgur.com/CAsveiZ.png" width="200">
+
+<img src="https://i.imgur.com/6k3NRxX.png" width="200"/>
+
+
 
 
 
