@@ -10,41 +10,69 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    var heroes = [HeroStats]()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        fetchData {
+            self.tableView.reloadData()
+            print("success")
+        }
+
         tableView.dataSource = self
         tableView.delegate = self
-    }
-
-
-}
-
-extension ViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row)")
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
 }
 
-// MARK - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+// MARK -
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return heroes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Hi"
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
+        let hero = heroes[indexPath.row]
+        cell?.lbl.text = hero.localized_name.capitalized
+        return cell!
+
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailViewController
+        let hero = heroes[indexPath.row]
+        vc?.hero = hero
+        present(vc!, animated: true, completion: nil)
     }
 
 
+
+    func fetchData(completed: @escaping () -> ()) {
+        let url = URL(string: "https://api.opendota.com/api/heroStats")
+
+        URLSession.shared.dataTask(with: url!) { data, response, err in
+
+            if err == nil {
+                do {
+                    self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                }
+                catch {
+                    print("error fetching data from api")
+                }
+            }
+        }.resume()
+    }
+
 }
+
+
+
+
