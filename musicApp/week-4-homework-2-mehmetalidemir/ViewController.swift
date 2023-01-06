@@ -43,6 +43,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
         let hero = heroes[indexPath.row]
         cell?.lbl.text = hero.localized_name.capitalized
+
         return cell!
 
     }
@@ -51,7 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailViewController
         let hero = heroes[indexPath.row]
         vc?.hero = hero
-        vc?.modalPresentationStyle = .fullScreen
+        vc?.modalPresentationStyle = .formSheet
         present(vc!, animated: true, completion: nil)
     }
 

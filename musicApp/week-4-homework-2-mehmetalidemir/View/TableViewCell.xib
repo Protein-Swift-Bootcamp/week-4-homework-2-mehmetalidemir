@@ -11,44 +11,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="week_4_homework_2_mehmetalidemir" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="447" height="149"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="week_4_homework_2_mehmetalidemir" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="99"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="447" height="149"/>
+                <rect key="frame" x="0.0" y="0.0" width="447" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4B-aV-KQD">
-                        <rect key="frame" x="5" y="5" width="437" height="139"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4B-aV-KQD">
+                        <rect key="frame" x="5" y="5" width="437" height="93"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-SG-SLl">
-                                <rect key="frame" x="190" y="4" width="243" height="131"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dota_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-R3-fTK">
+                                <rect key="frame" x="0.0" y="9" width="118" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="sCH-U1-4OR"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-SG-SLl">
+                                <rect key="frame" x="141" y="29" width="269" height="34"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dota_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-R3-fTK">
-                                <rect key="frame" x="15" y="21" width="147" height="97"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="tAj-6b-ug1"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hOS-R3-fTK" firstAttribute="centerY" secondItem="tUY-SG-SLl" secondAttribute="centerY" id="06o-2O-meh"/>
-                            <constraint firstItem="hOS-R3-fTK" firstAttribute="centerY" secondItem="d4B-aV-KQD" secondAttribute="centerY" id="MTP-OF-koi"/>
-                            <constraint firstItem="tUY-SG-SLl" firstAttribute="leading" secondItem="hOS-R3-fTK" secondAttribute="trailing" constant="28" id="PnH-Th-8h3"/>
-                            <constraint firstItem="hOS-R3-fTK" firstAttribute="leading" secondItem="d4B-aV-KQD" secondAttribute="leading" constant="15" id="V7S-1d-j2U"/>
-                            <constraint firstItem="hOS-R3-fTK" firstAttribute="top" secondItem="d4B-aV-KQD" secondAttribute="top" constant="21" id="W7x-zd-100"/>
+                            <constraint firstAttribute="bottom" secondItem="hOS-R3-fTK" secondAttribute="bottom" constant="12" id="4lb-Y3-Tpx"/>
+                            <constraint firstAttribute="trailing" secondItem="tUY-SG-SLl" secondAttribute="trailing" constant="57" id="9Y1-93-dA0"/>
+                            <constraint firstItem="tUY-SG-SLl" firstAttribute="top" secondItem="d4B-aV-KQD" secondAttribute="top" constant="50" id="Y5m-xT-gBz"/>
+                            <constraint firstItem="hOS-R3-fTK" firstAttribute="centerY" secondItem="tUY-SG-SLl" secondAttribute="centerY" id="Yki-qW-lAZ"/>
+                            <constraint firstItem="hOS-R3-fTK" firstAttribute="leading" secondItem="d4B-aV-KQD" secondAttribute="leading" constant="26" id="b9C-JE-aCa"/>
+                            <constraint firstItem="tUY-SG-SLl" firstAttribute="leading" secondItem="hOS-R3-fTK" secondAttribute="trailing" constant="20" id="tIK-HN-Rqe"/>
+                            <constraint firstItem="hOS-R3-fTK" firstAttribute="top" secondItem="d4B-aV-KQD" secondAttribute="top" constant="7" id="wVI-j5-Xwe"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="d4B-aV-KQD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Etd-kt-unD"/>
-                    <constraint firstAttribute="trailing" secondItem="d4B-aV-KQD" secondAttribute="trailing" constant="5" id="Pzc-q0-4Pp"/>
-                    <constraint firstAttribute="bottom" secondItem="d4B-aV-KQD" secondAttribute="bottom" constant="5" id="bVR-gm-GFB"/>
-                    <constraint firstItem="d4B-aV-KQD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="q0v-np-pca"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="d4B-aV-KQD" secondAttribute="bottom" constant="-44" id="2aa-Nc-8no"/>
+                    <constraint firstItem="d4B-aV-KQD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-65" id="ZNl-1d-33e"/>
+                    <constraint firstItem="d4B-aV-KQD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-15" id="bFr-Ip-e6A"/>
+                    <constraint firstItem="d4B-aV-KQD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="te3-9L-xQN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -57,7 +60,7 @@
                 <outlet property="cellImage" destination="hOS-R3-fTK" id="Ng9-wn-lil"/>
                 <outlet property="lbl" destination="tUY-SG-SLl" id="zyk-YF-Jp4"/>
             </connections>
-            <point key="canvasLocation" x="243.51145038167937" y="61.619718309859159"/>
+            <point key="canvasLocation" x="243.51145038167937" y="44.014084507042256"/>
         </tableViewCell>
     </objects>
     <resources>
