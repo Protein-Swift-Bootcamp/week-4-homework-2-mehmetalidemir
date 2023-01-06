@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var heroes = [HeroStats]()
 
 
@@ -19,12 +20,15 @@ class ViewController: UIViewController {
 
         fetchData {
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             print("success")
         }
 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        activityIndicator.startAnimating()
     }
 
 }
@@ -47,6 +51,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailViewController
         let hero = heroes[indexPath.row]
         vc?.hero = hero
+        vc?.modalPresentationStyle = .fullScreen
         present(vc!, animated: true, completion: nil)
     }
 

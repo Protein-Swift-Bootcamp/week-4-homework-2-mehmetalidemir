@@ -12,10 +12,16 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var heroLabel: UILabel!
 
+    @IBOutlet weak var heroImage: UIImageView!
+                       
+                       
     var hero: HeroStats?
     override func viewDidLoad() {
         super.viewDidLoad()
         heroLabel.text = hero?.localized_name
+        let imgUrl = "https://api.opendota.com" + (hero?.img)!
+        print(imgUrl)
+        heroImage.downloaded(from: imgUrl)
     }
 }
 
