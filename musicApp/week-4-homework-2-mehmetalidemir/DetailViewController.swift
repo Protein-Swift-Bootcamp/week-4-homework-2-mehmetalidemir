@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         heroLabel.text = hero?.localized_name
-        attackTypeLabel.text = "Attack Type: \(String(describing: hero?.attack_type))"
+        attackTypeLabel.text = "Attack Type: \(String(describing: hero?.attack_type ?? ""))"
         let imgUrl = "https://api.opendota.com" + (hero?.img)!
         print(imgUrl)
         heroImage.downloaded(from: imgUrl)
